@@ -1,0 +1,12 @@
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(45deg);
+  }
+  to {
+    transform: translateY(-20px) rotate(45deg);
+  }
+}
+
+.truck {
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.3));
+} 
