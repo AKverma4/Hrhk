@@ -8,13 +8,14 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
-    <div style={{ fontFamily: "'Poppins', sans-serif" }}>
-      {/* <LoadingOverlay /> */}
+    <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Contact />
+      <main className="px-4 md:px-6 lg:px-8">
+        <Hero />
+        <Services />
+        <About />
+        <Contact />
+      </main>
       <Footer />
       <ScrollToTop />
     </div>

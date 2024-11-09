@@ -72,6 +72,13 @@ module.exports = {
         'slideUp': 'slideUp 1s ease-out forwards',
         'scaleIn': 'scaleIn 0.5s ease-out forwards',
       },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
     },
   },
   plugins: [],
