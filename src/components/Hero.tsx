@@ -53,7 +53,7 @@ const Hero = () => {
     });
 
     return (
-        <div className="relative min-h-screen overflow-hidden">
+        <div id="home" className="relative min-h-screen overflow-hidden">
             {/* Background with overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -136,7 +136,42 @@ const Hero = () => {
                         ].map((feature, index) => (
                             <div
                                 key={index}
-                                className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg hover:bg-white/20 transition-all duration-300"
+                                className="bg-white/10 backdrop-blur-sm p-3 sm:p-4 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer"
+                                onClick={() => {
+                                    if (feature === 'Fleet Owners') {
+                                        const fleetSection = document.getElementById('fleet-owners');
+                                        if (fleetSection) {
+                                            fleetSection.scrollIntoView({ 
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    } else if (feature === 'Car Transport') {
+                                        const carSection = document.getElementById('car-transport');
+                                        if (carSection) {
+                                            carSection.scrollIntoView({ 
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    } else if (feature === 'Commission Agent') {
+                                        const commissionSection = document.getElementById('commission-agent');
+                                        if (commissionSection) {
+                                            commissionSection.scrollIntoView({ 
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    } else if (feature === 'Packers & Movers') {
+                                        const packersSection = document.getElementById('packers-movers');
+                                        if (packersSection) {
+                                            packersSection.scrollIntoView({ 
+                                                behavior: 'smooth',
+                                                block: 'start'
+                                            });
+                                        }
+                                    }
+                                }}
                             >
                                 <p className="text-sm sm:text-base text-white font-medium">{feature}</p>
                             </div>

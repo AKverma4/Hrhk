@@ -5,6 +5,10 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import FleetOwners from './components/FleetOwners'
+import CarTransport from './components/CarTransport'
+import CommissionAgent from './components/CommissionAgent'
+import PackersMovers from './components/PackersMovers'
 
 function App() {
   return (
@@ -14,7 +18,12 @@ function App() {
         <Hero />
         <Services />
         <About />
+        <FleetOwners />
+        <CarTransport />
+        <CommissionAgent />
+        <PackersMovers />
         <Contact />
+
       </main>
       <Footer />
       <ScrollToTop />

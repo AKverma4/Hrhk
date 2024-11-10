@@ -12,6 +12,35 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
+    
+    if (id === 'home') {
+      const heroSection = document.getElementById('home')
+      if (heroSection) {
+        heroSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+    
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
@@ -43,6 +72,7 @@ const Navbar = () => {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 className="text-gray-700 hover:text-maroon-600 px-2 lg:px-3 py-2 text-sm font-medium transition-colors duration-300 relative group"
+                onClick={(e) => handleNavClick(e, item.toLowerCase())}
               >
                 {item}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-maroon-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
@@ -83,7 +113,7 @@ const Navbar = () => {
               key={item}
               href={`#${item.toLowerCase()}`}
               className="block px-3 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-maroon-600 hover:bg-maroon-50 rounded-md transition-colors duration-300"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, item.toLowerCase())}
             >
               {item}
             </a>
