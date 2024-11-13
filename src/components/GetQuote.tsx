@@ -14,9 +14,44 @@ const GetQuote = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    
+    try {
+      console.log('Sending request...');
+      const response = await fetch('http://localhost:5000/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      console.log('Response:', response);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      
+      alert('Quote request sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        fromLocation: '',
+        toLocation: '',
+        serviceType: '',
+        vehicleType: '',
+        date: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error details:', error);
+      alert('Failed to send quote request. Please try again.');
+    }
   };
 
   const fadeInUp = {
