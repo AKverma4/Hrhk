@@ -13,7 +13,7 @@ console.log('Environment Variables:', {
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['https://hrhklogistics.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST'],
   credentials: true
 }));

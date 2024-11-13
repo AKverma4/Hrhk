@@ -19,7 +19,7 @@ const GetQuote = () => {
     
     try {
       console.log('Sending request...');
-      const response = await fetch('http://localhost:5000/api/quote', {
+      const response = await fetch('https://your-backend-url.vercel.app/api/quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
