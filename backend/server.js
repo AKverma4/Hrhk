@@ -13,7 +13,11 @@ console.log('Environment Variables:', {
 const app = express();
 
 app.use(cors({
-  origin: ['https://hrhklogistics.vercel.app', 'http://localhost:5173'],
+  origin: [
+    'https://hrhklogistics.vercel.app',
+    'https://hrhk-ajaybuwaniwal4-gmailcoms-projects.vercel.app',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -76,6 +80,9 @@ app.post('/api/quote', async (req, res) => {
     });
   }
 });
+
+// Add a preflight route
+app.options('/api/quote', cors());
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
