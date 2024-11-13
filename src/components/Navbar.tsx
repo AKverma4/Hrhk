@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
-    
+
     if (id === 'home') {
       const heroSection = document.getElementById('home')
       if (heroSection) {
@@ -38,22 +38,21 @@ const Navbar = () => {
         })
       }
     }
-    
+
     setIsMobileMenuOpen(false)
   }
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
-    }`}>
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center relative">
-              <img 
-                src={logo} 
-                alt="Hare Rama Hare Krishna Logistics Logo" 
+              <img
+                src={logo}
+                alt="Hare Rama Hare Krishna Logistics Logo"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -107,10 +106,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          }`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
           {['Home', 'Services', 'About', 'Gallery', 'Contact'].map((item) => (
