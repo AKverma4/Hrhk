@@ -28,13 +28,13 @@ const transporter = nodemailer.createTransport({
 
 // Test route
 app.get('/api/test', (req, res) => {
-  res.json({ message: 'Backend is working!' });
+  res.json({ message: 'API is working!' });
 });
 
 // Quote request route
 app.post('/api/quote', async (req, res) => {
   try {
-    console.log('Received quote request:', req.body);
+    console.log('Received request:', req.body);
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -56,9 +56,9 @@ app.post('/api/quote', async (req, res) => {
     console.log('Email sent successfully');
     res.status(200).json({ message: 'Quote request sent successfully' });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Server error:', error);
     res.status(500).json({ 
-      message: 'Error sending quote request',
+      message: 'Error processing request',
       error: error.message 
     });
   }

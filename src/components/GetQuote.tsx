@@ -27,14 +27,12 @@ const GetQuote = () => {
         body: JSON.stringify(formData)
       });
 
-      console.log('Response:', response);
-
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log('Success:', data);
+      console.log('Response:', data);
       
       alert('Quote request sent successfully!');
       setFormData({
