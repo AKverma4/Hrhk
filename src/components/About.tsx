@@ -5,7 +5,7 @@ const About = () => {
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-6 sm:mt-10 mb-3 sm:mb-4">
-            About Hare Rama Logistics
+            About Hare Rama Hare Krishna Logistics
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-orange-600 to-yellow-500 mx-auto mb-6 sm:mb-8"></div>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">

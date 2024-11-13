@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -49,12 +50,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-maroon-700 transform rotate-45 flex items-center justify-center relative">
-              <div className="absolute transform -rotate-45">
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" />
-                </svg>
-              </div>
+            <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center relative">
+              <img 
+                src={logo} 
+                alt="Hare Rama Hare Krishna Logistics Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <h1 className="text-base sm:text-lg md:text-xl font-bold text-maroon-700 leading-tight">
@@ -67,7 +68,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-            {['Home', 'Services', 'About', 'Contact'].map((item) => (
+            {['Home', 'Services', 'About', 'Gallery', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -78,9 +79,13 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-maroon-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </a>
             ))}
-            <button className="bg-gradient-to-r from-maroon-600 to-yellow-500 text-white px-4 lg:px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+            <a
+              href="#get-quote"
+              onClick={(e) => handleNavClick(e, 'get-quote')}
+              className="bg-gradient-to-r from-maroon-600 to-yellow-500 text-white px-4 lg:px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+            >
               Get Quote
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,7 +113,7 @@ const Navbar = () => {
         }`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
-          {['Home', 'Services', 'About', 'Contact'].map((item) => (
+          {['Home', 'Services', 'About', 'Gallery', 'Contact'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -118,11 +123,13 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <div className="px-3 py-2">
-            <button className="w-full bg-gradient-to-r from-maroon-600 to-yellow-500 text-white px-6 py-2 rounded-full text-sm sm:text-base font-medium hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
-              Get Quote
-            </button>
-          </div>
+          <a
+            href="#get-quote"
+            onClick={(e) => handleNavClick(e, 'get-quote')}
+            className="w-full bg-gradient-to-r from-maroon-600 to-yellow-500 text-white px-6 py-2 rounded-full text-sm sm:text-base font-medium hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 block text-center"
+          >
+            Get Quote
+          </a>
         </div>
       </div>
     </nav>

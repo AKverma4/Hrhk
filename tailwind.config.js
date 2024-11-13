@@ -62,6 +62,14 @@ module.exports = {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        lineMove: {
+          '0%': { transform: 'translateX(-200%)' },
+          '100%': { transform: 'translateX(200%)' }
+        },
+        slide: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(200%)' }
+        }
       },
       animation: {
         'fade-in': 'fade-in 1s ease-out',
@@ -71,6 +79,8 @@ module.exports = {
         'fadeIn': 'fadeIn 1s ease-out forwards',
         'slideUp': 'slideUp 1s ease-out forwards',
         'scaleIn': 'scaleIn 0.5s ease-out forwards',
+        'lineMove': 'lineMove 3s ease-in-out infinite',
+        'slide': 'slide 3s ease-in-out infinite'
       },
       screens: {
         'sm': '640px',

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import ScrollButton from './ScrollButton';
 
 const Hero = () => {
     useEffect(() => {
@@ -188,6 +188,11 @@ const Hero = () => {
                         </button>
                     </div>
                 </div>
+            </div>
+
+            {/* Add scroll down button */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <ScrollButton direction="down" targetId="services" />
             </div>
         </div>
     );
