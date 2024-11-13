@@ -28,12 +28,11 @@ const GetQuote = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to send request');
       }
 
-      const data = await response.json();
-      console.log('Response:', data);
-      
+      await response.json();
       alert('Quote request sent successfully!');
       setFormData({
         name: '',
