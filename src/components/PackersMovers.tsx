@@ -1,6 +1,6 @@
 const PackersMovers = () => {
   return (
-    <div id="packers-movers" className="min-h-screen pt-20 px-4 md:px-6 lg:px-8">
+    <div id="packers-movers" className="min-h-screen pt-20 px-4 md:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">

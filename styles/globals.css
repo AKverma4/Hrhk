@@ -10,3 +10,39 @@
 .truck {
   filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.3));
 } 
+
+/* Responsive viewport height */
+.min-h-[100dvh] {
+    min-height: 100vh; /* fallback */
+    min-height: 100dvh;
+}
+
+/* Better mobile touch handling */
+@media (hover: none) {
+    .hover\:scale-105 {
+        transform: none !important;
+    }
+}
+
+/* Small screen optimizations */
+@media (max-width: 360px) {
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    .text-xl {
+        font-size: 1.125rem;
+    }
+}
+
+@keyframes bounce-subtle {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite ease-in-out;
+} 
