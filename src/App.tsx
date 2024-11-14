@@ -13,6 +13,7 @@ import Gallery from './components/Gallery'
 import ScrollButton from './components/ScrollButton'
 import GetQuote from './components/GetQuote'
 import CustomerRatings from './components/CustomerRatings'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [showScrollUp, setShowScrollUp] = useState(false);
@@ -31,8 +32,9 @@ function App() {
       <Navbar />
       <main className="px-4 md:px-6 lg:px-8">
         <Hero />
-        <div id="services">
+        <div id="services" className="scroll-mt-20">
           <Services />
+          <PackersMovers />
         </div>
         <About />
         <Gallery />
@@ -40,12 +42,12 @@ function App() {
         <FleetOwners />
         <CarTransport />
         <CommissionAgent />
-        <PackersMovers />
         <GetQuote />
         <Contact />
       </main>
       <Footer />
-      {showScrollUp && <ScrollButton direction="up" />}
+      {showScrollUp && <ScrollButton direction="up" targetId="root" />}
+      <ScrollToTop />
     </div>
   )
 }
