@@ -28,12 +28,14 @@ const GetQuote = () => {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to send request');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      await response.json();
+      const data = await response.json();
+      console.log('Response:', data);
       alert('Quote request sent successfully!');
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -47,7 +49,11 @@ const GetQuote = () => {
       });
     } catch (error) {
       console.error('Error details:', error);
-      alert('Failed to send quote request. Please try again.');
+      if (error instanceof Error && error.message.includes('404')) {
+        alert('Quote submission service is currently unavailable. Please try again later.');
+      } else {
+        alert('Failed to send quote request. Please try again.');
+      }
     }
   };
 
