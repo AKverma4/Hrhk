@@ -12,6 +12,7 @@ import PackersMovers from './components/PackersMovers'
 import Gallery from './components/Gallery'
 import ScrollButton from './components/ScrollButton'
 import GetQuote from './components/GetQuote'
+import CustomerRatings from './components/CustomerRatings'
 
 function App() {
   const [showScrollUp, setShowScrollUp] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         </div>
         <About />
         <Gallery />
+        <CustomerRatings />
         <FleetOwners />
         <CarTransport />
         <CommissionAgent />
